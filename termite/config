@@ -33,11 +33,11 @@ cursor_blink = on
 # roundness = 2.0
 
 [colors]
-background = #dfcca2
-cursor = #e8e8e8
-cursor_foreground = #292f37
-foreground = #e8e8e8
-highlight = #2f2f2f
+background = #fdf6e3
+cursor = #2aa198
+cursor_foreground = #eee8d5
+foreground = #586e75
+highlight = #2aa198
 
 # colors from color0 to color254 can be set
 color0 = #fabd27
