@@ -40,9 +40,9 @@ foreground = #586e75
 highlight = #2aa198
 
 # colors from color0 to color254 can be set
-color0 = #fabd27
+color0 = #b58900
 color1 = #dc322f
-color2 = #b8ff26
+color2 = #859900
 color3 = #b58900
 color4 = #268bd2
 color5 = #f17296
