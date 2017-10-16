@@ -98,7 +98,8 @@ set $workspace1 "Main"
 set $workspace2 "Editor"
 set $workspace3 "Terminal"
 set $workspace4 "Browser"
-set $workspace10 "Music"
+set $workspace5 "Chat"
+set $workspace7 "Music"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -124,7 +125,10 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-for_window [class="Spotify"] move to workspace $workspace10
+for_window [class="Spotify"] move to workspace $workspace7
+for_window [class="Slack"] move to workspace $workspace5
+for_window [class="Skype"] move to workspace $workspace5
+for_window [class="Atom"] move to workspace $workspace2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
