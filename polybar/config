@@ -1,0 +1,193 @@
+[colors]
+background = #fdf6e3
+background-alt = #eee8d5
+foreground = #586e75
+foreground-alt = #93a1a1
+primary = #2aa198
+secondary = #e60053
+alert = #cc5758
+arcBlue = #5294e28C
+arcDark = #383c4a
+green = #859900
+
+[bar/bar1]
+width = 100%
+height = 27
+radius = 6.0
+fixed-center = false
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 3
+
+module-margin-left = 2
+module-margin-right = 2
+
+modules-left = i3
+modules-center =
+modules-right = volume wifi battery date powermenu
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = Caps Lock
+blacklist-1 = Num Lock
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.green}
+
+label-layout = %layout%
+label-layout-padding = 2
+label-layout-underline = ${colors.green}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = L
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.background-alt}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = N
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = l
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = NN
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+
+[module/xbacklight]
+type = internal/xbacklight
+card = intel_backlight
+
+format = <ramp>
+format-underline = ${colors.green}
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+[module/wifi]
+type = custom/script
+interval = 1
+exec = "nmcli d show wlo1 | grep 'GENERAL.CONNECTION' | awk '{ print $2 }'"
+format-prefix = "wifi "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.green}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date-alt = " %m-%d-%y"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-underline = ${colors.green}
+
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume>
+format-volume-underline = ${colors.green}
+
+format-muted-foreground = ${colors.foreground}
+label-muted = muted
+
+ramp-volume-0 = |
+ramp-volume-1 = ||
+ramp-volume-2 = |||
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+
+format-charging = <label-charging>
+format-charging-prefix = "  "
+format-charging-prefix-foreground = ${colors.foreground-alt}
+format-charging-underline = ${colors.green}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = .
+ramp-capacity-1 = ..
+ramp-capacity-2 = ...
+ramp-capacity-3 = ....
+ramp-capacity-4 = .....
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+
+[module/powermenu]
+type = custom/menu
+format-spacing = 1
+padding-right = 3
+
+label-open = 
+label-open-foreground = ${colors.green}
+label-close = 
+label-close-foreground = ${colors.green}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = 
+menu-0-0-exec = menu-open-1
+menu-0-1 = 
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = 
+menu-1-0-exec = menu-open-0
+menu-1-1 = 
+menu-1-1-exec = reboot
+
+menu-2-0 = 
+menu-2-0-exec = menu-open-0
+menu-2-1 = 
+menu-2-1-exec = shutdown now
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
