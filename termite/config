@@ -40,16 +40,16 @@ foreground = #586e75
 highlight = #2aa198
 
 # colors from color0 to color254 can be set
-color0 = #b58900
-color1 = #dc322f
+color0 = #2aa198
+color1 = #268bd2
 color2 = #859900
-color3 = #b58900
+color3 = #6c71c4
 color4 = #268bd2
 color5 = #f17296
 color6 = #2aa198
-color7 = #2aa198
-color8 = #002b36
-color9 = #cb4b16
+color7 = #586e75
+color8 = #657b83
+color9 = #002b36
 color10 = #586e75
 color11 = #8ec07c
 color12 = #2aa198

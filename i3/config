@@ -94,12 +94,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "Main"
-set $workspace2 "Editor"
-set $workspace3 "Terminal"
-set $workspace4 "Browser"
-set $workspace5 "Chat"
-set $workspace7 "Music"
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace0 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -201,9 +205,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # screenlock
 bindsym XF86ScreenSaver exec i3lock --color "$bg-color"
+exec --no-startup-id xautolock -time 4 -locker "i3lock-wrapper -l"
+
+set $Locker i3lock-wrapper -l && sleep 1
+
 bindsym $mod+p exec scrot
 
-exec --no-startup-id xautolock -time 4 -locker "i3lock-wrapper -l"
 
 set $Locker i3lock-wrapper -l && sleep 1
 
@@ -248,7 +255,7 @@ for_window [class="^.*"] border pixel 3
 smart_borders no_gaps
 
 # Set inner/outer gaps
-gaps inner 40
+gaps inner 20
 gaps outer 10
 
 # Gaps mode

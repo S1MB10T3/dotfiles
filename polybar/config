@@ -12,10 +12,10 @@ green = #859900
 
 [bar/bar1]
 width = 100%
-height = 27
+height = 30
 radius = 6.0
 fixed-center = false
-bottom = true
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -25,7 +25,7 @@ line-size = 3
 border-size = 4
 border-color = #00000000
 
-padding-left = 0
+padding-left = 3
 padding-right = 3
 
 module-margin-left = 2
@@ -37,6 +37,11 @@ modules-right = volume wifi battery date powermenu
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
+font-0 = xos4terminus:size=10;0
+font-1 = FontAwesome:size=12;0
+font-2 = TakaoGothic:weight=bold:size=12;0
+font-3 = FontAwesome:size=12;0
 
 [module/xwindow]
 type = internal/xwindow
@@ -53,7 +58,6 @@ format-prefix-underline = ${colors.green}
 
 label-layout = %layout%
 label-layout-padding = 2
-label-layout-underline = ${colors.green}
 
 [module/i3]
 type = internal/i3
@@ -66,19 +70,17 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = L
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.background-alt}
+label-focused = %icon%
+label-focused-underline = ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = N
+label-unfocused = %icon%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = l
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+label-visible = %icon%
+label-visible-underline = ${colors.foreground}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -86,84 +88,84 @@ label-urgent = NN
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
 
-[module/xbacklight]
-type = internal/xbacklight
-card = intel_backlight
-
-format = <ramp>
-format-underline = ${colors.green}
-
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-default = 
 
 [module/wifi]
 type = custom/script
 interval = 1
-exec = "nmcli d show wlo1 | grep 'GENERAL.CONNECTION' | awk '{ print $2 }'"
-format-prefix = "wifi "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.green}
+exec = "nmcli d show wlp3s0 | grep 'GENERAL.CONNECTION' | awk '{ print $2 }'"
+format-prefix = " "
 
 [module/date]
 type = internal/date
 interval = 5
 
-date-alt = " %m-%d-%y"
+date-alt = "%m/%d/%y"
 
 time = %H:%M
 time-alt = %H:%M:%S
-
-format-underline = ${colors.green}
 
 label = %date% %time%
 
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume>
-format-volume-underline = ${colors.green}
+format-volume = <ramp-volume>  <label-volume>
+format-muted = <label-muted>
+label-volume = %percentage%
+label-muted =   muted
+label-muted-foreground = #aaa
 
-format-muted-foreground = ${colors.foreground}
-label-muted = muted
 
-ramp-volume-0 = |
-ramp-volume-1 = ||
-ramp-volume-2 = |||
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-headphones-0 = 
 
 [module/battery]
 type = internal/battery
+
+full-at = 99
+
 battery = BAT0
-adapter = ADP1
+adapter = AC0
 
-format-charging = <label-charging>
-format-charging-prefix = "  "
-format-charging-prefix-foreground = ${colors.foreground-alt}
-format-charging-underline = ${colors.green}
+poll-interval = 5
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-charging = <animation-charging>  <label-charging>
+format-discharging = <ramp-capacity>  <label-discharging>
+format-full = <ramp-capacity>  <label-full>
+label-charging = %percentage%
+label-discharging = %percentage%
+label-full = %percentage%
 
-ramp-capacity-0 = .
-ramp-capacity-1 = ..
-ramp-capacity-2 = ...
-ramp-capacity-3 = ....
-ramp-capacity-4 = .....
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
 
 
 [module/powermenu]
 type = custom/menu
 format-spacing = 1
-padding-right = 3
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.green}
 label-close = 
 label-close-foreground = ${colors.green}
