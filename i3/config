@@ -239,8 +239,6 @@ bindsym $mod+Delete mode "$mode_system"
 # background image
 exec_always feh --bg-fill /home/rantahu/Pictures/background.png
 
-exec --no-startup-id display-visor -f -l
-
 exec --no-startup-id compton
 
 ### i3-gaps stuff ###
