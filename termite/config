@@ -1,5 +1,5 @@
 [options]
-# font = Droid Sans Mono 14
+font = 10
 mouse_autohide = true
 allow_bold = true
 dynamic_title = true
