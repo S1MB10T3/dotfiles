@@ -1,8 +1,8 @@
 rofi.color-enabled: true
-rofi.color-window: argb:ffdfcca2, argb:ffdfcca2, #2aa198
-rofi.color-normal: argb:000000, #ffffff, argb:0000000, argb:0000000, #2aa198
-rofi.color-active: argb:0000000, #ffffff, argb:0000000, argb:0000000, #ffffff
-rofi.color-urgent: argb:0000000, #ffffff, argb:0000000, argb:0000000, #ffffff
+rofi.color-window: argb:dcfdf6e3, argb:dcfdf6e3, #2aa198
+rofi.color-normal: argb:000000, #93a1a1, argb:0000000, argb:0000000, #2aa198
+rofi.color-active: argb:0000000, #93a1a1, argb:0000000, argb:0000000, #93a1a1
+rofi.color-urgent: argb:0000000, #93a1a1, argb:0000000, argb:0000000, #93a1a1
 
 rofi.font: System San Francisco Display 20
 rofi.eh: 1
