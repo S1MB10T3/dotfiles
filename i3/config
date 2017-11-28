@@ -197,6 +197,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # screenlock
 bindsym XF86ScreenSaver exec i3lock --color "$bg-color"
 
+# screenshot
 bindsym $mod+p exec scrot
 
 exec --no-startup-id display-visor -f -l LID
