@@ -13,7 +13,7 @@ green = #859900
 [bar/bar1]
 width = 100%
 height = 30
-fixed-center = false
+fixed-center = true
 bottom = false
 
 background = ${colors.background}
@@ -22,7 +22,7 @@ foreground = ${colors.foreground}
 line-size = 3
 
 
-border-color = #00000000
+border-color = #000000
 
 padding-left = 3
 padding-right = 3
@@ -31,8 +31,8 @@ module-margin-left = 2
 module-margin-right = 2
 
 modules-left = i3
-modules-center = xwindow
-modules-right = xkeyboard volume wifi battery date powermenu
+modules-center = date
+modules-right = xkeyboard volume wifi battery
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -82,7 +82,7 @@ label-visible-underline = ${colors.foreground}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = NN
+label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -106,12 +106,9 @@ format-prefix = " "
 type = internal/date
 interval = 5
 
-date-alt = "%m/%d/%y"
+date = %%{F#93a1a1} %A, %B %d, %Y %%{F#fdf6e3} |  %I:%M %p %{F-}
 
-time = %H:%M
-time-alt = %H:%M:%S
-
-label = %date% %time%
+label = %date%
 
 [module/volume]
 type = internal/volume
@@ -120,7 +117,7 @@ format-volume = <ramp-volume>  <label-volume>
 format-muted = <label-muted>
 label-volume = %percentage%
 label-muted =   mute
-label-muted-foreground = #aaa
+label-muted-foreground = #93a1a1
 
 
 ramp-volume-0 = 
@@ -138,9 +135,9 @@ adapter = AC0
 
 poll-interval = 5
 
-format-charging = <animation-charging>  %<label-charging>
-format-discharging = <ramp-capacity>  %<label-discharging>
-format-full = <ramp-capacity>  %<label-full>
+format-charging = <animation-charging>  <label-charging>%
+format-discharging = <ramp-capacity>  <label-discharging>%
+format-full = <ramp-capacity>  <label-full>%
 label-charging = %percentage%
 label-discharging = %percentage%
 label-full = %percentage%

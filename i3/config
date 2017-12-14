@@ -161,8 +161,8 @@ bindsym $mod+r mode "resize"
 
 
 set $bg-color	         #fdf6e3
-set $active-bg-color   #2aa198
-set $active-text-color        #fdf6e3
+set $active-bg-color   #eee8d5
+set $active-text-color        #2aa198
 set $text-color #586e75
 set $urgent-bg-color   #d33682
 
@@ -195,19 +195,21 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # screenlock
-bindsym XF86ScreenSaver exec i3lock --color "$bg-color"
+bindsym XF86ScreenSaver exec lock
+
+exec --no-startup-id xautolock -time 10 -locker lock
 
 # screenshot
-bindsym $mod+p exec scrot
+bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots'
 
 exec --no-startup-id display-visor -f -l LID
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec --no-startup-id lock
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id lock && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id lock && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id  systemctl poweroff -i, mode "default"
 
@@ -232,7 +234,7 @@ exec --no-startup-id compton
 ### i3-gaps stuff ###
 
 # Necessary for i3-gaps to work properly (pixel can be any value)
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 10
 
 # Smart Gaps
 smart_gaps on
