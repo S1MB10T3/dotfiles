@@ -162,16 +162,16 @@ bindsym $mod+r mode "resize"
 
 set $bg-color	         #fdf6e3
 set $active-bg-color   #eee8d5
-set $active-text-color        #2aa198
-set $text-color #586e75
+set $active-text-color #2aa198
+set $text-color        #586e75
 set $urgent-bg-color   #d33682
 
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $active-bg-color	$active-bg-color          $active-text-color          #586e75
-client.unfocused        $bg-color	$bg-color $text-color #586e75
-client.focused_inactive $bg-color	$bg-color	$text-color	#586e75
+client.focused          $active-bg-color	  $active-bg-color   $active-text-color   #586e75
+client.unfocused        $bg-color	          $bg-color          $text-color          #586e75
+client.focused_inactive $bg-color	          $bg-color	         $text-color          #586e75
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #586e75
 
 
@@ -230,6 +230,10 @@ bindsym $mod+Delete mode "$mode_system"
 exec_always feh --bg-fill /home/rantahu/Pictures/background.png
 
 exec --no-startup-id compton
+
+# reset displays
+
+bindsym XF86Display exec pkill -x -RTMIN+5 display-visor
 
 ### i3-gaps stuff ###
 
