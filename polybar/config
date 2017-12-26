@@ -38,9 +38,8 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 font-0 = xos4terminus:size=10;0
-font-1 = FontAwesome:size=12;0
+font-1 = FontAwesome:size=12;1
 font-2 = TakaoGothic:weight=bold:size=12;0
-font-3 = FontAwesome:size=12;0
 
 [module/xwindow]
 type = internal/xwindow
