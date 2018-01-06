@@ -105,7 +105,7 @@ format-prefix = " "
 type = internal/date
 interval = 5
 
-date = %%{F#93a1a1} %A, %B %d, %Y %%{F#fdf6e3} |  %I:%M %p %{F-}
+date = %%{F#93a1a1} %B %d, %Y %%{F#fdf6e3} |  %I:%M %p %{F-}
 
 label = %date%
 
