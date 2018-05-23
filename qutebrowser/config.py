@@ -34,11 +34,11 @@ c.aliases = {'w': 'session-save', 'q': 'close', 'wq': 'quit --save'}
 
 ## How often (in milliseconds) to auto-save config/cookies/etc.
 ## Type: Int
-# c.auto_save.interval = 15000
+c.auto_save.interval = 15000
 
 ## Always restore open sites when qutebrowser is reopened.
 ## Type: Bool
-# c.auto_save.session = False
+c.auto_save.session = True
 
 ## The backend to use to display websites. qutebrowser supports two
 ## different web rendering engines / backends, QtWebKit and QtWebEngine.
@@ -65,23 +65,23 @@ c.aliases = {'w': 'session-save', 'q': 'close', 'wq': 'quit --save'}
 
 ## Background color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.category.bg = solarized['base03']
+c.colors.completion.category.bg = solarized['base2']
 
 ## Bottom border color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.category.border.bottom = solarized['base03']
+c.colors.completion.category.border.bottom = solarized['base2']
 
 ## Top border color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.category.border.top = solarized['base03']
+c.colors.completion.category.border.top = solarized['base2']
 
 ## Foreground color of completion widget category headers.
 ## Type: QtColor
-c.colors.completion.category.fg = solarized['base3']
+c.colors.completion.category.fg = solarized['base0']
 
 ## Background color of the completion widget for even rows.
 ## Type: QssColor
-c.colors.completion.even.bg = solarized['base02']
+c.colors.completion.even.bg = solarized['base2']
 
 ## Text color of the completion widget.
 ## Type: QtColor
@@ -89,15 +89,15 @@ c.colors.completion.fg = solarized['base1']
 
 ## Background color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.bg = solarized['violet']
+c.colors.completion.item.selected.bg = solarized['cyan']
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.border.bottom = solarized['violet']
+c.colors.completion.item.selected.border.bottom = solarized['cyan']
 
 ## Top border color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.item.selected.border.top = solarized['violet']
+c.colors.completion.item.selected.border.top = solarized['cyan']
 
 ## Foreground color of the selected completion item.
 ## Type: QtColor
@@ -109,7 +109,9 @@ c.colors.completion.match.fg = solarized['base2']
 
 ## Background color of the completion widget for odd rows.
 ## Type: QssColor
-c.colors.completion.odd.bg = solarized['base02']
+c.colors.completion.odd.bg = solarized['base3']
+
+c.colors.completion.even.bg = solarized['base3']
 
 ## Color of the scrollbar in completion view
 ## Type: QssColor
@@ -284,7 +286,7 @@ c.colors.statusbar.insert.fg = solarized['base1']
 
 ## Background color of the statusbar.
 ## Type: QssColor
-c.colors.statusbar.normal.bg = solarized['base03']
+c.colors.statusbar.normal.bg = solarized['base3']
 
 ## Foreground color of the statusbar.
 ## Type: QssColor
@@ -338,7 +340,9 @@ c.colors.statusbar.url.warn.fg = solarized['yellow']
 
 ## Background color of the tab bar.
 ## Type: QtColor
-# c.colors.tabs.bar.bg = '#555555'
+c.colors.tabs.bar.bg =  solarized['base3']
+
+c.colors.webpage.bg = solarized['base3']
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
@@ -371,15 +375,23 @@ c.colors.tabs.indicator.stop = solarized['orange']
 
 ## Background color of unselected odd tabs.
 ## Type: QtColor
-c.colors.tabs.odd.bg = solarized['base03']
+c.colors.tabs.odd.bg = solarized['base3']
 
 ## Foreground color of unselected odd tabs.
 ## Type: QtColor
-c.colors.tabs.odd.fg = solarized['base1']
+c.colors.tabs.odd.fg = solarized['base02']
+
+## Background color of unselected odd tabs.
+## Type: QtColor
+c.colors.tabs.even.bg = solarized['base3']
+
+## Foreground color of unselected odd tabs.
+## Type: QtColor
+c.colors.tabs.even.fg = solarized['base02']
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.bg = solarized['violet']
+c.colors.tabs.selected.even.bg = solarized['cyan']
 
 ## Foreground color of selected even tabs.
 ## Type: QtColor
@@ -387,7 +399,7 @@ c.colors.tabs.selected.even.fg = solarized['base2']
 
 ## Background color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.bg = solarized['violet']
+c.colors.tabs.selected.odd.bg = solarized['cyan']
 
 ## Foreground color of selected odd tabs.
 ## Type: QtColor
