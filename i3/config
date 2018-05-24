@@ -236,12 +236,13 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # screenlock
-# bindsym XF86ScreenSaver exec lock
 # shut down, restart and locking features
 bindsym $mod+Delete exec rofi-computer
-bindsym $mod+shift+Delete exec betterlockscreen --lock
+bindsym $mod+shift+Delete exec betterlockscreen --lock blur
+bindsym XF86ScreenSaver exec betterlockscreen --lock blur
 
-exec --no-startup-id xautolock -time 10 -locker lock
+# auto screenlock
+exec --no-startup-id xautolock -time 10 -locker etterlockscreen --lock blur
 
 # screenshot
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots'
@@ -282,7 +283,7 @@ bindsym XF86Display exec pkill -x -RTMIN+5 display-visor
 ### i3-gaps stuff ###
 
 # Necessary for i3-gaps to work properly (pixel can be any value)
-for_window [class="^.*"] border pixel 10
+for_window [class="^.*"] border pixel 2
 
 # Smart Gaps
 smart_gaps on
@@ -334,3 +335,7 @@ mode "$mode_gaps_outer" {
 }
 
 bindsym $mod+m move workspace to output left
+
+exec --no-startup-id caffeine
+exec --no-startup-id nm-applet
+exec --no-startup-id pa-applet

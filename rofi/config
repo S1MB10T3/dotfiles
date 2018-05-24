@@ -4,13 +4,13 @@ rofi.color-normal: argb:000000, #93a1a1, argb:0000000, argb:0000000, #2aa198
 rofi.color-active: argb:0000000, #93a1a1, argb:0000000, argb:0000000, #93a1a1
 rofi.color-urgent: argb:0000000, #93a1a1, argb:0000000, argb:0000000, #93a1a1
 
-rofi.font: System San Francisco Display 20
+rofi.font: System San Francisco Display 15
 rofi.eh: 1
-rofi.line-margin: 30
+rofi.line-margin: 20
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
-rofi.lines: 3
-rofi.width: 100
-rofi.padding: 600
+rofi.lines: 5
+rofi.width: 50
+rofi.padding: 100
 rofi.bw: 0
 rofi.auto-select: true
