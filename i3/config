@@ -181,7 +181,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # i3 status
 bar {
-	font xft:Source Code Variable Roman 10, FontAwesome 10
+	font xft: PowerlineSymbols 10
         position top
 	status_command ~/bumblebee-status/bumblebee-status -m cpu battery datetime mpd -p root.path=/ time.format="%H:%M CW %V" date.format="%A, %d %b %Y" -t solarized-powerline
 	#tray_output secondary
@@ -242,7 +242,7 @@ bindsym $mod+shift+Delete exec betterlockscreen --lock blur
 bindsym XF86ScreenSaver exec betterlockscreen --lock blur
 
 # auto screenlock
-exec --no-startup-id xautolock -time 10 -locker etterlockscreen --lock blur
+exec --no-startup-id xautolock -time 10 -locker betterlockscreen --lock blur
 
 # screenshot
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots'
