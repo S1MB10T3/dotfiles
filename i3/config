@@ -182,7 +182,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 bar {
 	font xft: PowerlineSymbols 10
         position top
-	status_command ~/bumblebee-status/bumblebee-status -m  spotify cpu  amixer battery datetime mpd -p root.path=/ datetime.format="%I:%M %p %A, %d %b %Y" -t solarized-powerline
+	status_command i3status
 	#tray_output secondary
 	#output HDMI-A-0
   	colors {
