@@ -267,7 +267,7 @@ mode "$mode_system" {
 #exec --no-startup-id xautolock -time 10 -locker 'gnome-screensaver-command -l'
 
 # background image
-exec_always feh --bg-fill /home/rantahu/Pictures/background.png
+exec_always feh --bg-fill ~/Pictures/Wallpapes/background.png
 
 exec --no-startup-id compton
 
